@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog</title>
+    <script src="https://zhangqh22.gitee.io/libs/jquery.min.js"></script>
+    <script src="https://zhangqh22.gitee.io/libs/vue/vue.min.js"></script>
+    <script src="https://zhangqh22.gitee.io/libs/base64.js"></script>
+</head>
+<body>
+    <button type="button">点击</button>
+
+
+    <script>
+        $('button').click(function() {
+            /*$.get('https://api.github.com/users/zhangqh22').then(function(res) {
+                console.log(res);
+                $.get('https://api.github.com/users/zhangqh22').then(function(res2) {
+                    console.log(res2);
+                });
+            });*/
+
+            // https://segmentfault.com/a/1190000015144126?utm_source=tag-newest#articleHeader3
+            
+
+            $.get('https://api.github.com/?access_token=b5a7ea08ef6f1c7784ba39991b1ffa0b4c8c81a9').then(function(res) {
+                console.log(res);
+                // $.get('https://api.github.com/authorizations', {access_token: "b5a7ea08ef6f1c7784ba39991b1ffa0b4c8c81a9"}).then(function(res2) {
+                //     console.log(res2);
+                // });
+                $.get('https://api.github.com/authorizations', {access_token: "b5a7ea08ef6f1c7784ba39991b1ffa0b4c8c81a9"}).then(function(res2) {
+                    console.log(res2);
+                });
+            });
+
+
+            // https://api.github.com/repos/zhangqh22/zhangqh22.github.io/contents/test.json
+
+            // $.ajax({
+            //     type: 'put',
+            //     url: 'https://api.github.com/repos/zhangqh22/zhangqh22.github.io/contents/test.json',
+            //     headers: {
+            //         "access_token": "b5a7ea08ef6f1c7784ba39991b1ffa0b4c8c81a9"
+            //     },
+            //     contentType: 'application/json',
+            //     data: {
+            //         "access_token": "b5a7ea08ef6f1c7784ba39991b1ffa0b4c8c81a9",
+            //         "message": "commit from INSOMNIA",
+            //         "content": Base.encode('ajax方式更新'),
+            //         "sha": "342f7337a9cc93b0716fc78e6c37854e2bff2a0c"
+            //     },
+            //     // dataType: 'jsonp',
+            //     success: function(res) {
+            //         console.log(res);
+            //     }
+            // });
+            
+        });
+    </script>
+</body>
+</html>
